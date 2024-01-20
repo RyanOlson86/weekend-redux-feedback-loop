@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { Card, CardContent, Button, CardActions, Typography, Box, TextField } from "@mui/material";
 import React from "react";
 
-const FeedbackForm = ({ text, property, title, nextPath, inputText, inputType}) => {
+const FeedbackForm = ({ text, property, title, nextPath, inputText, inputType }) => {
   // Local state to store temporary form inputs
   const [formInput, setFormInput] = useState("");
 
@@ -38,14 +38,18 @@ const FeedbackForm = ({ text, property, title, nextPath, inputText, inputType}) 
         </button>
       </form> */}
 
-      <React.Fragment>
-        <CardContent sx={{
-            width: "600px", 
+      <Card>
+        <CardContent
+          sx={{
+            width: "600px",
             display: "flex",
             flexDirection: "column",
-            alignItems: "center"
-            }}>
-          <Typography variant="h3" gutterBottom textAlign="center">{text}</Typography>
+            alignItems: "center",
+          }}
+        >
+          <Typography variant="h3" gutterBottom textAlign="center">
+            {text}
+          </Typography>
           <Typography variant="h5" component="div" gutterBottom>
             {inputText}
           </Typography>
@@ -59,13 +63,13 @@ const FeedbackForm = ({ text, property, title, nextPath, inputText, inputType}) 
               onChange={(event) => setFormInput(event.target.value)}
             ></TextField>
           </Box>
+          <CardActions>
+            <Button size="large" variant="contained" onClick={handleNext} data-testid="next">
+              NEXT
+            </Button>
+          </CardActions>
         </CardContent>
-        <CardActions>
-          <Button size="large" variant="contained" onClick={handleNext} data-testid="next">
-            NEXT
-          </Button>
-        </CardActions>
-      </React.Fragment>
+      </Card>
     </>
   );
 };
