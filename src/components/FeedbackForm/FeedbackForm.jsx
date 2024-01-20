@@ -59,7 +59,7 @@ const FeedbackForm = ({ text, property, title, nextPath, inputText, inputType })
               variant="outlined"
               type={inputType}
               size="large"
-              data-testid="input"
+              inputProps={{"data-testid":"input"}}
               onChange={(event) => setFormInput(event.target.value)}
             ></TextField>
           </Box>
