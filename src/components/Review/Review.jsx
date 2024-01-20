@@ -1,15 +1,17 @@
 import { useSelector } from "react-redux"
-import { Link } from "react-router-dom/cjs/react-router-dom.min"
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import axios from "axios"
 
 const Review = () => {
     const reduxStore = useSelector(store => store)
-    console.log(reduxStore.comments)
+    
+    // set useHistory ad history
+    const history = useHistory()
 
     const handleSubmit = () => {
         axios.post('/api/feedback', reduxStore)
         .then(response => {
-            console.log('added')
+            history.push('/success')
         })
         .catch(error => {
             console.log('error in POST', error)

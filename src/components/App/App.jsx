@@ -4,6 +4,7 @@ import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom/cjs/react-router-dom.min';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
 import Review from '../Review/Review';
+import Success from '../Success/Success';
 
 function App() {
 
@@ -33,6 +34,10 @@ function App() {
 
         <Route path='/review'>
           <Review />
+        </Route>
+
+        <Route path='/success'>
+          <Success />
         </Route>
 
       </Router>

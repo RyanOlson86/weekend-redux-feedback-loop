@@ -31,7 +31,7 @@ const FeedbackForm = ({text, property, title, nextPath}) => {
             <h2>{text}</h2>
             <form onSubmit={handleNext}>
                 <label>{title}</label>
-                <input type="text" onChange={(event)=>setFormInput(event.target.value)}/>
+                <input type="text" data-testid="input" onChange={(event)=>setFormInput(event.target.value)}/>
                 <button type="submit" data-testid="next">Next</button>
             </form>
         </>
