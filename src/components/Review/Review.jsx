@@ -8,6 +8,8 @@ const Review = () => {
     // set useHistory ad history
     const history = useHistory()
 
+    // function for POST request with global state
+    // Then route to success page
     const handleSubmit = () => {
         axios.post('/api/feedback', reduxStore)
         .then(response => {

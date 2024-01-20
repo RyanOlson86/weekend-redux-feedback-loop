@@ -8,6 +8,7 @@ const Success = () => {
     // set useHistory ad history
     const history = useHistory()
 
+    // Reset store and go back to index
     const handleClick = () => {
         dispatch({type: "RESET"});
         history.push('/')
