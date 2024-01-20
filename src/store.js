@@ -11,12 +11,7 @@ const feedback = (state = {}, action) => {
       return state
     }
 
-const store = createStore(
-  combineReducers({
-    feedback
-  }),
-  applyMiddleware(logger),
-);
+const store = createStore(feedback, applyMiddleware(logger));
 
 
 export default store;
